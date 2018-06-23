@@ -24,3 +24,7 @@ $ ./ttpic 关键字 请求个数
 # 获取100个图集中狗狗的图片
 $ ./ttpic 狗狗 5
 ```
+
+## 思路
+
+[爬虫实践之头条狗狗图片](https://www.smslit.top/2018/05/28/spider-practice-pic-dog/)
