@@ -5,3 +5,7 @@
 ## ttpic
 
 [ttpic](/ttpic/ttpic)是一个爬取头条中图集的工具。
+
+## blogo
+
+[blogo](/blogo/blogo)是一个针对hexo静态博客的工具，可以统计博主每月发博文的数量，也可以爬取博客中所有图片。

@@ -27,4 +27,4 @@ $ ./ttpic 狗狗 5
 
 ## 思路
 
-[爬虫实践之头条狗狗图片](https://www.smslit.top/2018/05/28/spider-practice-pic-dog/)
+[爬虫实践之头条狗狗图片](https://www.smslit.top/2018/06/21/spider-practice-pic-dog/)
