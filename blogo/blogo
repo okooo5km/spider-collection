@@ -8,9 +8,6 @@ import urllib.parse as up
 import matplotlib.pyplot as plt
 from pyquery import PyQuery as pq
 
-plt.rcParams['font.family'] = ['SimHei'] #指定默认字体
-plt.rcParams['axes.unicode_minus'] = False #解决保存图像是负号'-'显示为方块的问题
-
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.1 Safari/605.1.15'
 }
@@ -64,7 +61,7 @@ def statistic_posts_by_date(posts):
         statistics[year][month] += 1
     return statistics
 
-def plot_statistics(statistics, title='博客每年活跃度'):
+def plot_statistics(statistics, title='posts yearly'):
     '''根据统计数据绘制曲线图
     :param statistics: 博文按照日期的统计数据
     :type statistics: dict
@@ -81,12 +78,12 @@ def plot_statistics(statistics, title='博客每年活跃度'):
         plt.subplot(row, 2, sub_n)
         sub_n += 1
         x = range(len(data))
-        plt.bar(x, data.values(), label=year+'年')
+        plt.bar(x, data.values(), label=year)
         for a,b in zip(x, data.values()):
             plt.text(a, b+0.05, '%d' % b, ha='center', va= 'bottom',fontsize=7)
         plt.xticks(x, data.keys())
-        plt.xlabel('月份')
-        plt.ylabel('博文数量(篇)')
+        plt.xlabel('Month')
+        plt.ylabel('Count of posts')
         plt.ylim(0, 15)
         plt.legend()
     plt.show()
@@ -188,7 +185,7 @@ if __name__ == '__main__':
     print(archive['name'], '一共有', len(archive['posts']), '篇博文！')
     if len(archive['posts']) > 0:
         if command == 'count':
-            plot_statistics(statistic_posts_by_date(archive['posts']), archive['name']+'每年博客活跃度')
+            plot_statistics(statistic_posts_by_date(archive['posts']), archive['name']+'\'s posts yearly')
         else:
             for image in get_post_images(archive['posts']):
                 save_image_from(image, archive['name'])
